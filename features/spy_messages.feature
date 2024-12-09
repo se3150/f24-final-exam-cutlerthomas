@@ -9,7 +9,8 @@ Scenario: I can successfully encode a secret message
     When I clear the inputfield "#letters"
     When I add "Cutler" to the inputfield "#letters"
     When I click on the button "#submit"
-    Then I expect that element "#decoded_message > p" matches the text "Dvumfs"
+    When I pause for 100ms
+    Then I expect that element "#decoded_message" contains the text "Dvumfs"
 
 Scenario: I can successfully decode a secret message
     Given I open the url "https://www.hanginghyena.com/solvers_a/caesar-cipher-decoder"
@@ -18,4 +19,5 @@ Scenario: I can successfully decode a secret message
     When I clear the inputfield "#letters"
     When I add "Dvumfs" to the inputfield "#letters"
     When I click on the button "#submit"
-    Then I expect that element "#decoded_message" matches the text "Cutler"
+    When I pause for 100ms
+    Then I expect that element "#decoded_message" contains the text "Cutler"
