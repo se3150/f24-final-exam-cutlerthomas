@@ -9,7 +9,7 @@ jobs:
       - name: Install pytest
         run: pip install pytest pytest-spec pytest-describe pytest-mock
       - name: Run pytest
-        run: pytest --spec --color=yes test_squirrel_server_mock.py
+        run: pytest --spec --color=yes test_brute.py
   RunFunctionalTests:
     runs-on: ubuntu-latest
     steps:
